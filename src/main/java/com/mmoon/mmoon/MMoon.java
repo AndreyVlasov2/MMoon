@@ -8,7 +8,9 @@ public final class MMoon extends JavaPlugin {
     @Override
     public void onEnable() {
 
-        Bukkit.getPluginManager().registerEvents(new Handler(), this);
+        Bukkit.getPluginManager().registerEvents(new Handler(this), this);
+        getCommand("info").setExecutor(new Command(this));
+        getCommand("dev").setExecutor(new DevCommand(this));
 
         getLogger().info("Plugin MMoon's on");
 
@@ -17,6 +19,8 @@ public final class MMoon extends JavaPlugin {
     @Override
     public void onDisable() {
         getLogger().info("Plugin MMoon's off");
+
+
 
     }
 
