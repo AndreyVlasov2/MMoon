@@ -1,3 +1,10 @@
 name: MMoon
 version: @version@
 main: com.mmoon.mmoon.MMoon
+commands:
+  info:
+    description: Info about player.
+    usage: /info <player>
+  dev:
+    description: Developer mode.
+    usage: /dev <on/off>

@@ -1,17 +1,27 @@
 package com.mmoon.mmoon;
 
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class MMoon extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
+
+        Bukkit.getPluginManager().registerEvents(new Handler(this), this);
+        getCommand("info").setExecutor(new Command(this));
+        getCommand("dev").setExecutor(new DevCommand(this));
+
+        getLogger().info("Plugin MMoon's on");
 
     }
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
+        getLogger().info("Plugin MMoon's off");
+
+
+
     }
+
 }
